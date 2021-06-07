@@ -1037,7 +1037,155 @@ header nav ul .active {
 .subscribe p {
     color: white;
     margin-left: 20px;
+    line-height: 2;
 }
 
 
 /* end subscribe */
+
+
+/* start contact */
+
+.contact {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+
+.contact .content {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width: 767px) {
+    .contact .content {
+        flex-direction: column;
+    }
+}
+
+.contact .content form {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 70%;
+}
+
+.contact .content form input,
+.contact .content form textarea {
+    border: 1px solid #CCC;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.contact .content form textarea {
+    height: 200px;
+}
+
+.contact .content form input[type="submit"] {
+    width: fit-content;
+    display: flex;
+    margin-left: auto;
+    background-color: var(--main-color);
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+}
+
+.contact .content form input:focus,
+.contact .content form textarea:focus {
+    outline: none;
+}
+
+.contact .content address {
+    flex-basis: 25%;
+}
+
+@media (max-width: 767px) {
+    .contact .content address {
+        order: -1;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+}
+
+.contact .content address h4 {
+    text-transform: uppercase;
+    font-weight: normal;
+    font-style: normal;
+    margin-bottom: 30px;
+}
+
+.contact .content address h4:nth-of-type(2) {
+    margin-top: 30px;
+}
+
+.contact .content address .phone {
+    display: block;
+    color: #777;
+    margin-bottom: 10px;
+    font-style: normal;
+}
+
+.contact .content address .location {
+    line-height: 1.8;
+    color: #777;
+}
+
+
+/* end contact */
+
+
+/* start footer */
+
+.footer {
+    padding-top: calc(var(--section-padding) /2);
+    padding-bottom: calc(var(--section-padding) /2);
+    background-image: url("../images/subscribe.jpg");
+    background-size: cover;
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.footer::before {
+    content: "";
+    background-color: rgb(0 0 0 / 70%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.footer .container {
+    position: relative;
+}
+
+.footer .container img {
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+.footer .container p:not(.copyright) {
+    text-transform: uppercase;
+    font-size: 22px;
+    padding: 20px;
+    border-bottom: 1px solid white;
+    width: fit-content;
+    margin: 20px auto;
+}
+
+.footer .container .social-icons i {
+    padding: 10px;
+}
+
+.footer .container .copyright {
+    margin-top: 60px;
+}
+
+.footer .container .copyright span {
+    font-weight: bold;
+    color: var(--main-color);
+}
+
+
+/* end footer */
