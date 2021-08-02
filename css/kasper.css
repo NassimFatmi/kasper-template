@@ -160,6 +160,7 @@ header nav {
 header .toggle-menu {
     color: white;
     font-size: 22px;
+    cursor: pointer;
 }
 
 @media (min-width:767px) {
@@ -176,7 +177,7 @@ header nav ul {
     header nav ul {
         display: none;
     }
-    header nav .toggle-menu:hover+ul {
+    header nav .toggle-menu.show+ul {
         display: flex;
         flex-direction: column;
         position: absolute;
@@ -200,20 +201,49 @@ header nav ul a {
 }
 
 header .form {
-    height: 30px;
-    width: 40px;
     border-left: 1px solid white;
     position: relative;
     margin-left: 30px;
+    padding: 0 8px;
+    display: flex;
+    align-items: center;
+}
+
+header .form .search {
+    padding: 8px 10px;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, .2);
+    border: none;
+    color: white;
+    margin-right: 8px;
+    display: none;
+}
+
+header.open .form .search {
+    display: block;
+}
+
+@media (max-width:991px) {
+    header.open .form {
+        width: 100%;
+    }
+    header.open .search {
+        width: 100%;
+    }
+    header.open .logo,
+    header.open .toggle-menu {
+        display: none;
+    }
+}
+
+header .form .search:focus {
+    outline: none
 }
 
 header .form i {
     color: white;
-    position: absolute;
     font-size: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 0;
+    cursor: pointer;
 }
 
 header nav ul a:hover,
@@ -230,7 +260,7 @@ header nav ul .active {
 
 .landing {
     background-color: #333;
-    background-image: url(../images/landing.jpg);
+    background-image: url(../images/landing01.jpg);
     background-size: cover;
     min-height: 100vh;
 }
@@ -287,6 +317,11 @@ header nav ul .active {
     position: absolute;
     top: 50%;
     transform: translateY(50%);
+    cursor: pointer;
+}
+
+.landing .change-background:hover {
+    color: var(--main-color);
 }
 
 .landing .fa-angle-right {
@@ -311,6 +346,7 @@ header nav ul .active {
     border-radius: 50%;
     border: 1px solid white;
     margin-right: 5px;
+    cursor: pointer;
 }
 
 .landing .bullets .active {
@@ -519,6 +555,7 @@ header nav ul .active {
     display: block;
     margin: 20px auto;
     width: fit-content;
+    text-align: center;
     padding: 10px 15px;
     background-color: var(--main-color);
     color: white;
@@ -791,6 +828,8 @@ header nav ul .active {
     background-color: var(--main-color);
     display: block;
     position: relative;
+    width: 0;
+    transition: .8s;
 }
 
 .our-skills .skills .prog-holder .prog span::before {
